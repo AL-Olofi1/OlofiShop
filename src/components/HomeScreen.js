@@ -1,4 +1,7 @@
-// create a dummy product data
+import React from 'react'
+
+import { Row, Col } from 'react-bootstrap'
+import Product from './Product'
 const products = [
     {
         _id: '1',
@@ -79,3 +82,29 @@ const products = [
         numReviews: 12,
     },
 ]
+
+
+function HomeScreen() {
+    return (
+        <div>
+            <h1>Latest Products</h1>
+            <Row>
+                {products.map(product => (
+                    <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+
+                        <Product product = {product} />
+                        <br />
+                    </Col>
+                ))}
+
+
+            </Row>
+
+
+
+
+        </div>
+    )
+}
+
+export default HomeScreen
