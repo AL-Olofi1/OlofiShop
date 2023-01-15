@@ -2,7 +2,8 @@ import { Container } from 'react-bootstrap';
 import MyNavbar from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './components/HomeScreen';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProductScreen from './components/ProductScreen';
+import { BrowserRouter as Router, Routes, Route , Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Container>
           <Routes> 
             <Route path='/' element={<HomeScreen />} exact /> 
+            <Route path='/product/:id' element={<ProductScreen />} exact /> 
           </Routes>
         </Container>
       </main>
