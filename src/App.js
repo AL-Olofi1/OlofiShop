@@ -1,27 +1,22 @@
 import { Container } from 'react-bootstrap';
-import logo from './logo.svg';
 import MyNavbar from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './components/HomeScreen';
-import Products from './components/Product';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App">
-
-
+    <Router>
       <MyNavbar />
       <main className='py-6'>
         <Container>
-
-          <h1>My App</h1>
-
-          <HomeScreen />
-
+          <Routes> 
+            <Route path='/' element={<HomeScreen />} exact /> 
+          </Routes>
         </Container>
       </main>
       <Footer />
-
-    </div>
+    </Router>
   );
 }
 
